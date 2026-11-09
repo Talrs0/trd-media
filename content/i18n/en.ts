@@ -1,0 +1,128 @@
+export const en = {
+  nav: { home: "Home", locations: "Locations", audience: "Audience", advertise: "Advertise", about: "About", contact: "Contact" },
+  skip: "Skip to content", navLabel: "Main navigation", menu: "Menu", language: "Switch to Thai",
+  eyebrow: "Digital out-of-home · Bangkok",
+  heroTitle: ["University", "Audience", "Network"],
+  heroSubtitle: "Connecting brands with younger generations",
+  heroBody: "Portrait digital screens in student residences and neighborhood venues around KMITL.",
+  heroCaption: "Illustration · Student residence lobby",
+  visit: "Request a location visit", kit: "Download media kit", quote: "Request a quotation",
+  snapshot: "The network in numbers", snapshotLabels: ["Residents at the first location", "Estimated student contacts per campaign", "KMITL students · QS snapshot", "TRD survey responses"],
+  what: "What we do", whatTitle: "Advertising in the places students spend time",
+  whatCards: [
+    ["University-focused advertising", "Our digital screens connect brands with students in the places they live, study and spend time."],
+    ["Growing within and beyond the community", "We plan to expand into restaurants, cafés, gyms and shared spaces inside and around universities."],
+  ],
+  plan: "Plan a campaign", planTitle: "Explore the network",
+  teasers: ["See the venues and the inputs behind estimated student contacts.", "Explore the KMITL community and what survey respondents reported.", "Get the portrait screen specifications and campaign reporting details."],
+  homeSections: {
+  "locations": [
+    "Plan advertising in the places students use every day, from Ratchapruek Women Dormitory to KO-IN Cha Chuck around KMITL. Choose a setting that fits your product and message, whether students are entering their residence or stopping for food and drinks.",
+    "Explore venue details and the inputs behind estimated student contacts to help choose your location and campaign period. Request a visit to see the screen placement before booking."
+  ],
+  "campaign": [
+    "Introduce your products, services or promotions through portrait digital screens in the student community around KMITL. Use still images or video with a concise message, an easily understood offer and a clear next step.",
+    "Share your intended audience, campaign dates and budget to discuss locations and request a quotation. Confirm creative, the playback schedule and the reporting scope before the campaign begins."
+  ],
+  "audience": [
+    "Gen Z is TRD’s core audience: young people developing preferences, building routines and finding products and services that fit their lives.",
+    "KMITL and its surrounding community are our first focus at this stage, helping us learn and develop before planning expansion into more young-adult communities."
+],
+  "advertise": [
+    "Prepare creative for the portrait display with a clear product image, main message and contact details. Review the supported resolution, slot length, playback loop and file checklist before submitting your artwork.",
+    "Follow the process from confirming venues and dates through to campaign photographs and a completion report. Discuss tracked links or QR codes before launch if you would like to measure responses."
+  ]
+},
+  ctaTitle: "Connect with the student community",
+  ctaBody: "Request a location visit or campaign quotation.",
+  intro: {
+    home: ["University Audience Network", "Digital screens connecting brands with students around KMITL in Bangkok."],
+    locations: ["Where our screens are", "Explore the venues and see how we estimate student contacts for campaign planning."],
+    audience: ["Connect with Gen Z", "Build familiarity today. Grow with the next generation."],
+    advertise: ["Screen formats and delivery", "Prepare creative for our portrait display and see what campaign reporting can cover."],
+    about: ["Part of everyday university life", "TRD Media is a university-focused digital out-of-home network in Lat Krabang, Bangkok."],
+    contact: ["Connect with the student community", "Request a location visit or campaign quotation."],
+  },
+  location: {
+    dorm: "Student residence", restaurant: "Restaurant", rooms: "Rooms", residents: "Residents", share: "Student share",
+    screens: "Screens", missingScreens: "TODO · Confirm installed screen count", missingAddress: "TODO · Confirm venue address and map pin",
+    map: "Find on Google Maps", mapSearch: "Search on Google Maps",
+    photo: "Illustration · Venue photo pending", placement: "Illustration · Screen placement photo pending",
+    model: "Planning inputs → output", input: "Planning input", value: "Value",
+    passages: "Passages per resident per day", visibility: "Visibility factor", duration: "Campaign duration",
+    days: "days", daily: "Estimated student contacts per day", campaign: "Estimated student contacts per {days} days",
+    openDays: "Open days per month", monthlyVisits: "Customer visits per month", dailyVisits: "Average visits per open day",
+    openDaily: "Estimated student contacts per open day", monthly: "Estimated student contacts per month",
+    math: "Estimates multiply the reported audience or traffic by student share and visibility. The dorm model also uses passages per resident. Period totals are calculated before rounding.",
+  },
+  audience: {
+    context: "Surrounding community", community: "KMITL", communityText: "A substantial university community with recognized strengths in engineering.",
+    communityLabels: ["Students in the QS snapshot", "Undergraduates in the QS snapshot", "In Thailand for Mechanical & Aerospace Engineering"],
+    survey: "TRD audience survey", surveyLabels: ["KMITL responses", "Undergraduates", "Engineering field"],
+    housing: "Where respondents live", housingLabels: ["Live in dormitories", "Private dormitories", "University dormitories"],
+    respondentCount: "{count} of {total} respondents", spending: "Reported weekly spending",
+    highSpend: "Report THB {amount}+ per week", largestBand: "Largest band: THB {band} per week ({share}).",
+    chart: "Weekly spending bands (THB)", count: "Respondents", below: "Below {value}",
+    influence: "Influence beyond personal purchases", influenceBody: "Lazada Thailand’s CEO described how Gen Z helps shop for family members. The ICSC survey asked US Gen Z respondents about factors that influence their own purchases.",
+    influenceLabels: ["Ranked friends and family in their top three", "Ranked social media and influencers in their top three"],
+    salary: "Future purchasing potential", salaryBody: "A reason to establish brand relevance before students enter working life.",
+    salaryTable: "Monthly salary benchmarks (THB)", role: "Role", years: "years", roles: ["Engineer", "Electrical engineer"],
+    historical: "Historical research", historicalBody: "Employment income alone does not capture students’ available purchasing resources.",
+    historicalLabels: ["Monthly receipts", "Monthly spending", "Of receipts spent"],
+    wider: "Wider-market research", widerTitle: "Screen advertising can prompt conversation and search",
+    widerBody: "Connect the physical message with an easy next step.",
+    actionLabels: ["Searched online for advertiser information", "Visited the advertiser’s website", "Discussed an ad or product", "Recommended the product or brand"],
+  },
+  format: {
+    specs: "Campaign specifications", detail: "Details", visual: "Portrait display and freestanding unit shown in proportion",
+    labels: ["Display", "Creative resolution", "Unit dimensions", "Ad slot", "Loop duration", "Operating hours", "Plays per booked slot", "Share of loop per slot"],
+    display: "{inches}-inch, portrait", unit: "{height} (H) × {width} (W) cm", seconds: "seconds", minutes: "minutes", hours: "hours per day", plays: "{hourly} per hour / {daily} per day",
+    checklist: "Creative checklist", audio: "Make the message clear without audio.", sheet: "Download spec sheet",
+    report: "Clear delivery. Documented results.",
+    steps: [
+      ["Before launch", "Location, dates, approved creative and agreed schedule."],
+      ["During the campaign", "Playback and uptime reporting, where supported."],
+      ["At completion", "Campaign photographs and a completion report."],
+      ["Response tracking", "Tracked links or QR responses, when configured."],
+    ],
+  },
+  contact: {
+    direct: "Talk to TRD Media", call: "Call", line: "Chat on LINE", lineTodo: "TODO · Confirm LINE contact link",
+    form: "Campaign inquiry", fields: ["Name", "Company", "Email", "Phone", "Budget range", "Campaign dates", "Message"],
+    hints: ["Budget range in THB", "Preferred dates or timing"],
+    required: "Fields marked * are required.", send: "Send inquiry", sending: "Sending…",
+    success: "Thanks. Your inquiry was sent.", invalid: "Check the highlighted fields and try again.",
+    unavailable: "The form is temporarily unavailable. Please email or call us with your inquiry.",
+    failed: "We couldn’t send your inquiry. Try again or contact us by email or phone.",
+    appendix: "Appendix: survey details",
+    groups: ["Gender", "Year of study", "Travel mode", "Weekly frequency as recorded"],
+    responses: [
+      ["Male", "Female", "Prefer not to answer"],
+      ["Year 1", "Year 2", "Year 3", "Year 4", "Postgraduate", "Not currently studying"],
+      ["Private car", "Public transport", "Walking", "Motorcycle", "Other"],
+      ["1–2 days", "3–4 days", "Every day"],
+    ],
+    response: "Response",
+  },
+  notes: {
+    dorm: "TRD planning model using supplied dorm figures. Confirm the input figures with dorm management. Estimated student contacts count repeated screen contacts, not unique reach.",
+    restaurant: "Traffic reported by the restaurant. Estimated student contacts count repeated screen contacts, not unique reach.",
+    qs: "QS university profile snapshot supplied by TRD. The live QS profile differs from this snapshot. TODO · Confirm the snapshot’s enrollment year and campus coverage. University community size is not screen reach.",
+    rank: "Research.com subject ranking, {year}, reported by KMITL.",
+    survey: "TRD survey dashboard, n={n}. Findings describe respondents, not all KMITL students or screen viewers.",
+    housing: "TRD survey dashboard, n={n}. Housing does not establish exposure to a TRD screen.",
+    spending: "TRD survey dashboard, n={n}. Spending category and survey date are not specified. Amounts are weekly and should not be read as income or disposable budget.",
+    influence: "Lazada Thailand CEO comments reported by Bangkok Business. ICSC / Big Village, US survey {year}, n={n} aged {ages}, {students}% students. The survey is not a Thai student benchmark.",
+    salary: "Adecco Thailand Salary Guide {year}, p. {page}. Recruitment-market ranges, not sector averages, KMITL graduate outcomes or guaranteed earnings.",
+    historical: "Belink × Intage, {n}+ university students, August {year}, reported by Marketing Oops. Historical data, not current KMITL estimates. The spending share is calculated from reported averages.",
+    oaaa: "OAAA / Harris Poll, April {year} US survey, n={n} adults aged {ages}. Self-reported actions in the previous {months} months among recent viewers of digital place-based ads across venue types. These figures do not describe dorm campaigns.",
+    format: "Assumes one play per loop and continuous operation. Scheduled plays are separate from audience impressions.",
+    reporting: "Reporting scope to confirm. Ad plays, lobby passages, unique campaign reach and tracked responses are different measures. No measured reach or attention rate is claimed.",
+    appendix: "TRD survey, n={n}, {sources} collection sources. Date and sampling method not provided. Original frequency question unavailable. No attendance or ad-reach rate inferred.",
+  },
+  footer: "University-focused digital out-of-home media",
+  notFound: "Page not found", backHome: "Back to home",
+};
+
+export type Dictionary = typeof en;
+

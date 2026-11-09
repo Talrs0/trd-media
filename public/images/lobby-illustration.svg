@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="800" viewBox="0 0 720 800">
+<defs>
+  <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a184a2"/><stop offset=".44" stop-color="#68516e"/><stop offset="1" stop-color="#3b2c44"/></linearGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6f596c"/><stop offset="1" stop-color="#302633"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#907991"/><stop offset=".6" stop-color="#4d4154"/><stop offset="1" stop-color="#2d2537"/></linearGradient>
+  <linearGradient id="art" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#523263"/><stop offset=".63" stop-color="#885d95"/><stop offset="1" stop-color="#c389b6"/></linearGradient>
+  <linearGradient id="light" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e7c5d5"/><stop offset="1" stop-color="#b497b2" stop-opacity=".08"/></linearGradient>
+  <radialGradient id="shade"><stop offset=".42" stop-color="#160f20" stop-opacity="0"/><stop offset="1" stop-color="#160f20" stop-opacity=".46"/></radialGradient>
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".84" numOctaves="3" stitchTiles="stitch"/></filter>
+  <clipPath id="display"><rect x="462" y="270" width="114" height="202" rx="2"/></clipPath>
+</defs>
+<rect width="720" height="800" fill="#2b2332"/>
+<path d="M0 0h720v685L288 572 0 730Z" fill="url(#wall)"/>
+<path d="M0 0h720v101L292 178 0 127Z" fill="#44364f"/>
+<path d="M0 0h720v57L291 151 0 102Z" fill="#393043"/>
+<path d="m0 126 291 52 429-77v5l-429 77L0 131z" fill="#d7b4ca" opacity=".67"/>
+<path d="m0 731 288-159 432 113v115H0z" fill="url(#floor)"/>
+<path d="M292 180v390m89-402v424m230-463v525m-23-521v512m117-528v555" stroke="#b6a0b5" opacity=".24" fill="none"/>
+<path d="m292 575 19 225m57-207 167 207m-316-190L56 800m49-126L0 698M0 760l342-172m-86 212 54-219m-310 203 720-74m-483-90 483 129" stroke="#ac8ca5" fill="none" opacity=".23"/>
+<path d="m0 152 254 52v377L0 704z" fill="#2b2334"/>
+<path d="m0 172 231 45v349L0 675Z" fill="url(#glass)"/>
+<path d="m0 174 231 45v81L0 291Zm0 233 231-68v31L0 484Zm0 122 231-117v33L0 582z" fill="#b2a0b5" opacity=".15"/>
+<path d="m1 304 230-2m0 136L0 509m0 113 231-94M69 190v449m98-427v383m62-378v354" stroke="#20192a" stroke-width="8" fill="none"/>
+<path d="m0 174 231 45m-1 352L0 675m73-483v443m98-422v380" stroke="#c6acc1" stroke-width="2" fill="none" opacity=".36"/>
+<path d="m107 471 42-11m28-7 31-8" stroke="#d0afbd" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+<path d="M274 185v390l22-10V181z" fill="#af93ac" opacity=".24"/>
+<path d="m359 164 124-22-110 459-65-16z" fill="url(#light)" opacity=".26"/>
+<path d="m720 369-84-22v313l84 22z" fill="#302539" opacity=".4"/>
+<path d="m648 396 72 17m-72-3 72 17m-72-3 72 17" fill="none" stroke="#b59db7" opacity=".35"/>
+<ellipse cx="518" cy="670" rx="133" ry="22" fill="#201826" opacity=".62"/>
+<path d="m446 248 19-15h120l10 15v407l-13 15-136-10z" fill="#201929" stroke="#ba9cb9" stroke-width="2"/>
+<path d="M585 237v420l-2 9 11-11V250z" fill="#140e1c"/>
+<rect x="449" y="248" width="137" height="410" rx="5" fill="#272033" stroke="#726078"/>
+<rect x="460" y="268" width="118" height="206" rx="2" fill="#b294bb"/>
+<g clip-path="url(#display)">
+  <rect x="462" y="270" width="114" height="202" fill="url(#art)"/>
+  <circle cx="549" cy="333" r="35" fill="#ecc1d9"/>
+  <path d="M451 392 578 320v150H451z" fill="#b6a0ce" opacity=".8"/>
+  <path d="M455 453 577 357v120H455z" fill="#775287" opacity=".83"/>
+  <path d="M462 435 580 406v70H462z" fill="#42294f" opacity=".7"/>
+  <path d="M472 285h19m-19 4h10m76 156h9m-9 5h9" stroke="#f4dceb" stroke-width="1" opacity=".78"/>
+  <path d="M472 425v8h29v-8zM505 425v8h15v-8z" fill="#edc4df" opacity=".8"/>
+</g>
+<path d="M476 505h83m-83 5h83m-83 5h83" stroke="#5a4763" stroke-width="1" opacity=".65"/>
+<circle cx="518" cy="613" r="2" fill="#e8b1d1" opacity=".7"/>
+<path d="m446 657-13 17h171l-18-17z" fill="#18111f" stroke="#7b6580" stroke-width="1.4"/>
+<path d="M0 0h720v800H0z" fill="url(#shade)"/>
+<rect width="720" height="800" filter="url(#noise)" opacity=".12" style="mix-blend-mode:soft-light"/>
+</svg>
