@@ -88,3 +88,9 @@ Pending copy is explicit in both languages:
 Venue pages use balanced, uncropped imagery and restyled tables. Student share is hidden only in the venue presentation. The underlying model inputs, estimates and downloadable planning documents are preserved. Dormitory estimates remain approximately 1,397 daily contacts and 39,115 contacts per 28 days; restaurant estimates remain 75 per open day and 1,800 per month. These are estimated contacts, not unique audience measurements.
 
 The two campaign screenshots in the revision PDF refer to the same visual treatment. The repository contains one original campaign banner; it is retained once per relevant page as an interactive highlights section.
+
+## Cloudflare Pages deployment
+
+For the existing `trd-media.pages.dev` site, run `npm install` followed by `npm run build:cloudflare`. Upload the **contents** of `out/` as a new production deployment in the existing Cloudflare Pages project. The static build includes all localized routes, images, fonts, and downloadable HTML planning documents. `public/_headers` preserves download response headers on Cloudflare Pages. The default Next.js server build remains available with `npm run build`.
+
+For a Git-connected Cloudflare Pages project, set the production branch to `main`, the build command to `npm run build:cloudflare`, and the output directory to `out`. A direct-upload project requires a fresh upload for each release.
