@@ -75,3 +75,16 @@ The weekly spending chart uses the five respondent counts embedded in slide 9 of
 ## Audience presentation
 
 The Home and Audience pages now use a qualitative Gen Z story, icon cards and a notice–explore–connect infographic. KMITL is positioned as the initial launch focus, with further communities described as a future direction. Detailed source data remains in the content modules and planning materials. The audience page no longer presents statistical tables or percentages. Edit bilingual story copy in `components/audience-story.tsx`.
+
+## Website revision — November 2026
+
+The website uses the rose / plum / ivory palette in `app/globals.css`. The header stays visible on scroll. The concept caption, welcome strip, creative-preparation homepage teaser, launch story and global closing CTA have been removed. The Audience page retains its route and now hosts the interactive campaign highlights instead of the illustrated four-card story.
+
+Pending copy is explicit in both languages:
+
+- `components/audience-story.tsx`: compact homepage cards and expandable Notice → Explore → Connect journey.
+- `components/revision-interactions.tsx`: everyday-space selector and Audience / Locations / Engagement statistics selector. Replace the pending labels with verified statistics and their periods/sources when supplied; no numerical demo data is used.
+
+Venue pages use balanced, uncropped imagery and restyled tables. Student share is hidden only in the venue presentation. The underlying model inputs, estimates and downloadable planning documents are preserved. Dormitory estimates remain approximately 1,397 daily contacts and 39,115 contacts per 28 days; restaurant estimates remain 75 per open day and 1,800 per month. These are estimated contacts, not unique audience measurements.
+
+The two campaign screenshots in the revision PDF refer to the same visual treatment. The repository contains one original campaign banner; it is retained once per relevant page as an interactive highlights section.
