@@ -1,30 +1,18 @@
 import { CustomerBanner } from "./customer-banner";
-import { AudienceStory, LaunchStory } from "./audience-story";
+import { AudienceStory } from "./audience-story";
+import { EverydayLife, CampaignHighlights } from "./revision-interactions";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { dictionary, fill } from "@/content/i18n";
 import { dorm, dormEstimate, restaurant, restaurantEstimate } from "@/content/locations";
 import { formatCopy, locationRows } from "@/content/presentation";
-import { download, href, number, site, source, type Locale } from "@/content/site";
-import { community, format, historical, influence, oaaa, salaries } from "@/content/stats";
-import { dormRespondents, highSpend, largestBand, respondentShare, survey } from "@/content/survey";
+import { download, href, site, type Locale } from "@/content/site";
+import { format } from "@/content/stats";
+import { survey } from "@/content/survey";
 import { Arrow, Footnote, Intro, Metrics, SectionTitle, Table } from "./ui";
 import Image from "next/image";
 import { Photo } from "./photo";
 
 type Props = { locale: Locale };
-
-function Research({ locale, home = false }: Props & { home?: boolean }) {
-  const d = dictionary(locale);
-  const a = d.audience;
-  return <section className="section dark research"><div className="wrap">
-    <SectionTitle label={a.wider}>{a.widerTitle}</SectionTitle>
-    <Metrics items={oaaa.actions.map((value, index) => ({ value: value + "%", label: a.actionLabels[index] }))} />
-    <p className="section-lead">{a.widerBody}</p>
-    <Footnote links={[["OAAA / Harris Poll", source.oaaa]]}>{fill(d.notes.oaaa, { year: oaaa.year, ages: oaaa.ages, months: oaaa.months, n: number(oaaa.sample) })}</Footnote>
-    {home && <Link className="text-link" href={href(locale, "audience")}>{d.nav.audience}<Arrow /></Link>}
-  </div></section>;
-}
 
 export function Home({ locale }: Props) {
   const d = dictionary(locale);
@@ -41,17 +29,8 @@ export function Home({ locale }: Props) {
         </div>
       </div></div>
     </section>
-    <section className="welcome light"><div className="wrap">
-      <h2>{d.whatTitle}</h2><p>{d.heroBody}</p><p>{d.whatCards[0][1]}</p>
-    </div></section>
-    <AudienceStory locale={locale} home />
-    <section className="section network-section"><div className="wrap network-panel">
-      <Photo locale={locale} slot="network" className="network-photo" />
-      <div className="network-copy"><SectionTitle label="TRD MEDIA">{d.intro.about[0]}</SectionTitle>
-        <p>{d.intro.about[1]}</p><p>{d.whatCards[1][1]}</p>
-        <Link className="button primary" href={href(locale, "about")}>{d.nav.about}<Arrow /></Link>
-      </div>
-    </div></section>
+    <EverydayLife locale={locale} />
+    <AudienceStory locale={locale} />
     <section className="section light home-feature"><div className="wrap feature-row">
       <div className="venue-preview venue-photos">
         <figure><Photo locale={locale} slot="dorm" /><figcaption>{dorm.name[locale]}</figcaption></figure>
@@ -62,20 +41,12 @@ export function Home({ locale }: Props) {
         <Link className="text-link" href={href(locale, "locations")}>{d.nav.locations}<Arrow /></Link>
       </div>
     </div></section>
-    <section className="campaign-banner"><Photo locale={locale} slot="campaign" className="campaign-photo" /><div className="wrap">
-      <div><h2>{d.heroSubtitle}</h2>{d.homeSections.campaign.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<Link className="button primary" href={href(locale, "contact")}>{d.quote}<Arrow /></Link></div>
-    </div></section>
+    <CampaignHighlights locale={locale} />
     <section className="section light home-feature"><div className="wrap feature-row">
       <Photo locale={locale} slot="audience" /><div className="feature-copy"><SectionTitle>{d.nav.audience}</SectionTitle>
         {d.homeSections.audience.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<Link className="text-link" href={href(locale, "audience")}>{d.nav.audience}<Arrow /></Link>
       </div>
     </div></section>
-    <section className="section light home-feature"><div className="wrap feature-row reverse">
-      <Photo locale={locale} slot="formats" /><div className="feature-copy"><SectionTitle>{d.nav.advertise}</SectionTitle>
-        {d.homeSections.advertise.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<Link className="text-link" href={href(locale, "advertise")}>{d.nav.advertise}<Arrow /></Link>
-      </div>
-    </div></section>
-    <LaunchStory locale={locale} />
   </>;
 }
 
@@ -86,12 +57,12 @@ export function Locations({ locale }: Props) {
   const venues = [
     {
       kind: l.dorm, name: dorm.name[locale], address: dorm.address[locale], screens: dorm.screens, map: dorm.map, image: dorm.image, placement: dorm.placement,
-      stats: [{ value: dorm.rooms, suffix: "+", label: l.rooms }, { value: dorm.residents, label: l.residents }, { value: dorm.studentShare + "%", label: l.share }],
-      estimate: { value: dormEstimate.campaign, prefix: "≈", label: rows.campaignLabel }, rows: rows.dorm, note: d.notes.dorm,
+      stats: [{ value: dorm.rooms, suffix: "+", label: l.rooms }, { value: dorm.residents, label: l.residents }],
+      estimate: { value: dormEstimate.campaign, prefix: "≈", label: rows.campaignLabel }, rows: rows.dorm.filter(([label]) => label !== l.share),
     },
     {
       kind: l.restaurant, name: restaurant.name, address: restaurant.address, screens: restaurant.screens, map: restaurant.map, image: restaurant.image, placement: null,
-      stats: [], estimate: { value: restaurantEstimate.monthly, label: l.monthly }, rows: rows.restaurant, note: d.notes.restaurant,
+      stats: [], estimate: { value: restaurantEstimate.monthly, label: l.monthly }, rows: rows.restaurant.filter(([label]) => label !== l.share),
     },
   ];
   return <><Intro locale={locale} page="locations" />
@@ -107,25 +78,16 @@ export function Locations({ locale }: Props) {
           <p>{venue.screens === null ? l.missingScreens : l.screens + " · " + venue.screens}</p>
           <a className="text-link" href={venue.map}>{venue.address ? l.map : l.mapSearch}<Arrow direction="out" /></a>
           <Metrics items={[venue.estimate]} />
-          <Footnote>{venue.note}</Footnote>
-          {venue.stats.length > 0 && <><Metrics items={venue.stats} /><Footnote>{d.notes.dorm}</Footnote></>}
+          {venue.stats.length > 0 && <Metrics items={venue.stats} />}
         </div>
-        <div className="venue-table"><Table caption={l.model} headers={[l.input, l.value]} rows={venue.rows} outputs={2} /><Footnote>{venue.note} {l.math}</Footnote></div>
+        <div className="venue-table"><Table caption={l.model} headers={[l.input, l.value]} rows={venue.rows} outputs={2} /></div>
       </article>)}
     </div></section>
   </>;
 }
 
-function AudienceBlock({ title, label, tone = "light", children }: { title: string; label?: string; tone?: "light" | "pale" | "dark"; children: ReactNode }) {
-  return <section className={"section " + tone}><div className="wrap split audience-block"><SectionTitle label={label}>{title}</SectionTitle><div>{children}</div></div></section>;
-}
-
-function zipMetrics(values: readonly (string | number)[], labels: readonly string[]) {
-  return values.map((value, index) => ({ value, label: labels[index] }));
-}
-
 export function Audience({ locale }: Props) {
-  return <><Intro locale={locale} page="audience" /><AudienceStory locale={locale} /><LaunchStory locale={locale} /></>;
+  return <><Intro locale={locale} page="audience" /><CampaignHighlights locale={locale} /></>;
 }
 
 export function Advertise({ locale }: Props) {
@@ -140,13 +102,13 @@ export function Advertise({ locale }: Props) {
   return <><Intro locale={locale} page="advertise" />
     <section className="section light"><div className="wrap formats-grid">
       <figure className="device-figure"><svg viewBox="-21 -10 104 200" role="img" aria-label={f.visual}>
-        <path d="M-11 0V170M-14 0h6m-6 170h6M0 179h55m-55-3v6m55-6v6" stroke="#ae9cc4" strokeWidth=".5" fill="none" />
-        <rect width={format.width} height={format.height} rx="2" fill="#221b2d" stroke="#ae9cc4" strokeWidth=".5"/>
-        <rect x={(format.width - displayWidth) / 2} y="9" width={displayWidth} height={displayHeight} rx="0.8" fill="#775287" />
-        <circle cx="36" cy="49" r="10" fill="#e8b1d1" /><path d="M9 63 46 42v37H9z" fill="#ae9cc4" opacity=".7"/>
+        <path d="M-11 0V170M-14 0h6m-6 170h6M0 179h55m-55-3v6m55-6v6" stroke="#95667D" strokeWidth=".5" fill="none" />
+        <rect width={format.width} height={format.height} rx="2" fill="#492637" stroke="#95667D" strokeWidth=".5"/>
+        <rect x={(format.width - displayWidth) / 2} y="9" width={displayWidth} height={displayHeight} rx="0.8" fill="#35677D" />
+        <circle cx="36" cy="49" r="10" fill="#EF7CA3" /><path d="M9 63 46 42v37H9z" fill="#95667D" opacity=".7"/>
         <text x="27.5" y="72" fill="white" textAnchor="middle" fontSize="6">{format.ratio}</text>
-        <text transform="translate(-15 85) rotate(-90)" fill="#e7ddeb" textAnchor="middle" fontSize="5">{format.height} cm</text>
-        <text x="27.5" y="187" fill="#e7ddeb" textAnchor="middle" fontSize="5">{format.width} cm</text>
+        <text transform="translate(-15 85) rotate(-90)" fill="#FFF8F3" textAnchor="middle" fontSize="5">{format.height} cm</text>
+        <text x="27.5" y="187" fill="#FFF8F3" textAnchor="middle" fontSize="5">{format.width} cm</text>
       </svg><figcaption>{f.visual}</figcaption></figure>
       <div><Table caption={f.specs} headers={[d.location.input, f.detail]} rows={spec.rows} />
         <Footnote>{d.notes.format}</Footnote>

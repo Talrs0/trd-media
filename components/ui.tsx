@@ -35,7 +35,7 @@ export function Shell({ locale, page, children }: { locale: Locale; page: Page; 
         </nav>
       </details>
     </header>
-    <main id="main">{children}<Closing locale={locale} page={page} /></main>
+    <main id="main">{children}</main>
     {media.footer.src && <Photo locale={locale} slot="footer" className="footer-photo" />}
     <footer className="footer"><div className="wrap footer-inner">
       <Link className="brand-link" href={href(locale, "home")}><Logo /></Link>
@@ -45,14 +45,6 @@ export function Shell({ locale, page, children }: { locale: Locale; page: Page; 
       <nav aria-label={d.navLabel}>{navigation.map(item => <Link key={item} href={href(locale, item)}>{d.nav[item]}</Link>)}</nav>
     </div></footer>
   </>;
-}
-
-function Closing({ locale, page }: { locale: Locale; page: Page }) {
-  const d = dictionary(locale);
-  return <section className="closing"><div className="wrap closing-inner">
-    <div><p className="eyebrow">TRD MEDIA</p><h2>{d.ctaTitle}</h2><p>{d.ctaBody}</p></div>
-    <Link className="button primary" href={href(locale, "contact") + (page === "contact" ? "#contact-options" : "")}>{page === "contact" ? d.quote : d.visit}<Arrow /></Link>
-  </div></section>;
 }
 
 export function Intro({ locale, page }: { locale: Locale; page: Exclude<Page, "home"> }) {
