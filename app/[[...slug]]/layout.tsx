@@ -8,5 +8,8 @@ export default async function RootLayout({ children, params }: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const { slug } = await params;
-  return <html lang={slug?.[0] === "en" ? "en" : "th"}><body>{children}</body></html>;
+  return <html lang={slug?.[0] === "en" ? "en" : "th"} data-theme="light" suppressHydrationWarning>
+    <head><script dangerouslySetInnerHTML={{ __html: 'try{document.documentElement.dataset.theme=localStorage.getItem("trd-theme")==="dark"?"dark":"light"}catch{}' }} /></head>
+    <body>{children}</body>
+  </html>;
 }
