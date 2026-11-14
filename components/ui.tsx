@@ -11,7 +11,7 @@ import { Arrow } from './icons';
 export { Arrow } from './icons';
 
 export function Logo() {
-  return <Image className="logo-image" src="/images/trd-logo.jpg" alt="TRD Media" width={2170} height={725} sizes="140px" priority />;
+  return <Image className="logo-image" src="/images/trd-wordmark.png" alt="TRD Media" width={2169} height={725} sizes="(max-width: 767px) 112px, 140px" priority />;
 }
 
 export function Shell({ locale, page, children }: { locale: Locale; page: Page; children: ReactNode }) {
@@ -19,6 +19,14 @@ export function Shell({ locale, page, children }: { locale: Locale; page: Page; 
   const other = locale === "th" ? "en" : "th";
   const navigation = ["home", "about", "audience", "advertise", "locations", "contact"] as const;
   return <>
+    <svg width="0" height="0" className="wordmark-filter" aria-hidden="true">
+      <defs>
+        {/* Use the green channel to make the supplied image's white backdrop transparent. */}
+        <filter id="trd-wordmark-cutout" colorInterpolationFilters="sRGB">
+          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 -5 0 0 4.9" />
+        </filter>
+      </defs>
+    </svg>
     <a className="skip" href="#main">{d.skip}</a>
     <header className="header" data-page={page}>
       <div className="wrap header-inner">

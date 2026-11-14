@@ -1,7 +1,7 @@
 type ImageSlot = { src: string | null; alt: { th: string; en: string }; caption?: { th: string; en: string } };
 export const media: Record<"hero" | "network" | "audience" | "campaign" | "venueOverview" | "formats" | "pageBanner" | "dorm" | "restaurant" | "placement" | "about" | "community" | "adFood" | "adMenu" | "footer", ImageSlot> = {
   "hero": {
-    "src": "/images/bangkok-network-tilted.png",
+    "src": "/images/bangkok-network-cream.png",
     "alt": {
       "th": "ภาพแนวคิดการขยายเครือข่ายในกรุงเทพฯ พร้อมสัญลักษณ์จอดิจิทัล",
       "en": "Bangkok network expansion concept with illustrative screen markers"
