@@ -50,7 +50,7 @@ export default async function PageView({ params }: Props) {
   const business = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": site.origin + "/#organization", name: site.name, url: site.origin, email: site.email, telephone: site.tel, logo: site.origin + "/images/trd-logo.jpg" },
+      { "@type": "Organization", "@id": site.origin + "/#organization", name: site.name, url: site.origin, email: site.email, telephone: site.tel, logo: site.origin + "/images/trd-wordmark.png" },
       { "@type": "LocalBusiness", "@id": site.origin + "/#business", name: site.name, url: site.origin, email: site.email, telephone: site.tel,
         parentOrganization: { "@id": site.origin + "/#organization" },
         areaServed: { "@type": "Place", name: site.area[locale] } },
