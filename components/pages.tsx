@@ -102,13 +102,13 @@ export function Advertise({ locale }: Props) {
   return <><Intro locale={locale} page="advertise" />
     <section className="section light"><div className="wrap formats-grid">
       <figure className="device-figure"><svg viewBox="-21 -10 104 200" role="img" aria-label={f.visual}>
-        <path d="M-11 0V170M-14 0h6m-6 170h6M0 179h55m-55-3v6m55-6v6" stroke="#95667D" strokeWidth=".5" fill="none" />
-        <rect width={format.width} height={format.height} rx="2" fill="#492637" stroke="#95667D" strokeWidth=".5"/>
-        <rect x={(format.width - displayWidth) / 2} y="9" width={displayWidth} height={displayHeight} rx="0.8" fill="#35677D" />
-        <circle cx="36" cy="49" r="10" fill="#EF7CA3" /><path d="M9 63 46 42v37H9z" fill="#95667D" opacity=".7"/>
+        <path d="M-11 0V170M-14 0h6m-6 170h6M0 179h55m-55-3v6m55-6v6" stroke="var(--muted)" strokeWidth=".5" fill="none" />
+        <rect width={format.width} height={format.height} rx="2" fill="var(--ink)" stroke="var(--muted)" strokeWidth=".5"/>
+        <rect x={(format.width - displayWidth) / 2} y="9" width={displayWidth} height={displayHeight} rx="0.8" fill="var(--muted)" />
+        <circle cx="36" cy="49" r="10" fill="var(--pink)" /><path d="M9 63 46 42v37H9z" fill="var(--muted)" opacity=".7"/>
         <text x="27.5" y="72" fill="white" textAnchor="middle" fontSize="6">{format.ratio}</text>
-        <text transform="translate(-15 85) rotate(-90)" fill="#FFF8F3" textAnchor="middle" fontSize="5">{format.height} cm</text>
-        <text x="27.5" y="187" fill="#FFF8F3" textAnchor="middle" fontSize="5">{format.width} cm</text>
+        <text transform="translate(-15 85) rotate(-90)" fill="var(--ivory)" textAnchor="middle" fontSize="5">{format.height} cm</text>
+        <text x="27.5" y="187" fill="var(--ivory)" textAnchor="middle" fontSize="5">{format.width} cm</text>
       </svg><figcaption>{f.visual}</figcaption></figure>
       <div><Table caption={f.specs} headers={[d.location.input, f.detail]} rows={spec.rows} />
         <Footnote>{d.notes.format}</Footnote>
