@@ -6,6 +6,7 @@ import { href, site, type Locale, type Page } from "@/content/site";
 import { AnimatedNumber } from "./motion";
 import { Photo } from "./photo";
 import { media } from "@/content/media";
+import { ThemeToggle } from "./theme-toggle";
 
 import { Arrow } from './icons';
 export { Arrow } from './icons';
@@ -24,6 +25,9 @@ export function Shell({ locale, page, children }: { locale: Locale; page: Page; 
         {/* Use the green channel to make the supplied image's white backdrop transparent. */}
         <filter id="trd-wordmark-cutout" colorInterpolationFilters="sRGB">
           <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 -5 0 0 4.9" />
+          <feComposite in2="SourceGraphic" operator="in" result="wordmark-alpha" />
+          <feFlood className="logo-tint" floodColor="var(--rose)" />
+          <feComposite in2="wordmark-alpha" operator="in" />
         </filter>
       </defs>
     </svg>
@@ -34,10 +38,11 @@ export function Shell({ locale, page, children }: { locale: Locale; page: Page; 
         <nav className="main-nav" aria-label={d.navLabel}>
           {navigation.map(item => <Link key={item} href={href(locale, item)} aria-current={item === page ? "page" : undefined}>{d.nav[item]}</Link>)}
         </nav>
+        <ThemeToggle locale={locale} />
         <Link className="locale" href={href(other, page)} hrefLang={other} aria-label={"TH / EN · " + d.language}><span className={locale === "th" ? "selected" : ""}>TH</span><span className="locale-divider" aria-hidden="true">/</span><span className={locale === "en" ? "selected" : ""}>EN</span></Link>
       </div>
       <details className="mobile-menu">
-        <summary>{d.menu}<span aria-hidden="true">☰</span></summary>
+        <summary><span className="mobile-menu-label">{d.menu}</span><span aria-hidden="true">☰</span></summary>
         <nav className="mobile-nav wrap" aria-label={d.navLabel}>
           {navigation.map(item => <Link key={item} href={href(locale, item)} aria-current={item === page ? "page" : undefined}>{d.nav[item]}</Link>)}
         </nav>

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { href, type Locale } from "@/content/site";
 import { Arrow } from "./icons";
+import { href, type Locale } from "@/content/site";
 
 const copy = {
   th: {
@@ -30,7 +30,6 @@ export function AudienceStory({ locale }: { locale: Locale }) {
   return <section className="section audience-story"><div className="wrap">
     <div className="story-heading"><p className="eyebrow">{c.eyebrow}</p><h2>{c.title}</h2><p className="placeholder-copy">{placeholder}</p></div>
     <div className="story-cards">{c.cards.map(([title], i) => <article key={title}><span className="story-icon"><StoryIcon index={i} /></span><h3>{title}</h3><p className="placeholder-copy">{placeholder}</p></article>)}</div>
-    <figure className="audience-journey"><figcaption>{c.journey}</figcaption><ol>{c.steps.map(([title], i) => <li key={title}><details><summary><span className="journey-index">0{i + 1}</span><strong>{title}</strong><span className="journey-prompt">{locale === "th" ? "ดูรายละเอียด +" : "Explore +"}</span></summary><p className="placeholder-copy">{placeholder}</p></details></li>)}</ol></figure>
     <Link className="text-link" href={href(locale,"audience")}>{c.link}<Arrow /></Link>
   </div></section>;
 }
